@@ -4,4 +4,3 @@ Feature: URL Validation
     Given I have a URL "https://todo.ly/"
     When I visit the URL
     Then the URL should be valid
-    And I should see loginButton

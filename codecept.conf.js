@@ -35,4 +35,4 @@ exports.config = {
   },
   tests: './*_test.js',
   name: 'testProject'
-}
+};
