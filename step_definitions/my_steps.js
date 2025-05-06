@@ -13,9 +13,12 @@ When(/^I use valid credentials$/, function () {
     MainPage.fillField(MainPage.passwordField, "12345");
 });
 When(/^I click submit button$/, function () {
+    I.click(MainPage.checkbox)
     I.click(MainPage.submitCredentialsButton);
 });
 Then(/^I should be able to see my inbox$/, function () {
     I.waitForVisible(MainPage.inboxLogo, 10)
     I.seeElement(MainPage.inboxLogo);
 });
+
+// Test comment
