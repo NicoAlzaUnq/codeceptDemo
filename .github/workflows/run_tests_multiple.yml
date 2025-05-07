@@ -1,4 +1,4 @@
-name: run test
+name: run test multiple
 
 on:
   workflow_dispatch:
