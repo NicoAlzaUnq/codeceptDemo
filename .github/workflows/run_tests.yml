@@ -44,3 +44,10 @@ jobs:
       - name: run tests
         run: HEADLESS=${{github.event.inputs.headless}} npx codeceptjs run --steps --grep ${{github.event.inputs.grep}}
 
+      - name: upload tests report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeceptjs-output
+          path: output/
+
