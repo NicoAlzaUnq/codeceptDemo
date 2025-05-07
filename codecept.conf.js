@@ -23,7 +23,8 @@ exports.config = {
       './step_definitions/exercise1Extraction.js',
       './step_definitions/exercise2Url.js',
       './step_definitions/exercise4Steps.js'
-    ]
+    ],
+    tags: '@pass'
   },
   plugins: {
     screenshotOnFail: { enabled: true },

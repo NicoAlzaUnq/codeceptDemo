@@ -1,3 +1,4 @@
+@pass
 Feature: Number Extraction
 
   Scenario: Extract the first number from a sentence
