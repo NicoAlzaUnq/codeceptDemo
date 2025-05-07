@@ -42,5 +42,5 @@ jobs:
         run: npx playwright install
 
       - name: run tests
-        run: HEADLESS=true npx codeceptjs run --steps
+        run: HEADLESS=${{github.event.inputs.headless}} npx codeceptjs run --steps --grep ${{github.event.inputs.grep}}
 
