@@ -1,0 +1,46 @@
+name: run test
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - qa
+          - staging
+      grep:
+        description: 'filter'
+        required: false
+        default: '@pass'
+      headless:
+        description: 'headless?'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: install dependencies
+        run: npm install
+
+      - name: install playwright
+        run: npx playwright install
+
+      - name: run tests
+        run: HEADLESS=true npx codeceptjs run --steps
+
